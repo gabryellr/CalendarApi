@@ -1,0 +1,6 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://mongodatabase:27017/calendar
+      username: root
+      password: root

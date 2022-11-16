@@ -1,0 +1,453 @@
+{
+	"info": {
+		"_postman_id": "d16d4452-7fa3-48ad-98f2-b0c6afdedccb",
+		"name": "Calendar API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Interviewer",
+			"item": [
+				{
+					"name": "Create interviewer James",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"pm.collectionVariables.set(\"jamesInterviewerId\", jsonData.id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"James\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/interviewers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"interviewers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create interviewer Anne",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"pm.collectionVariables.set(\"anneInterviewerId\", jsonData.id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Anne\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/interviewers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"interviewers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create slots to the interviewer James",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"date\": \"2022-12-10\",\n  \"slot\": {\n    \"from\": \"09:00\",\n    \"to\": \"12:00\"\n  }\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/interviewers/{{jamesInterviewerId}}/slots",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"interviewers",
+								"{{jamesInterviewerId}}",
+								"slots"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create slots to the interviewer Anne",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"date\": \"2022-12-10\",\n  \"slot\": {\n    \"from\": \"13:00\",\n    \"to\": \"18:00\"\n  }\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/interviewers/{{anneInterviewerId}}/slots",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"interviewers",
+								"{{anneInterviewerId}}",
+								"slots"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Candidate",
+			"item": [
+				{
+					"name": "Create Emilly candidate",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"pm.collectionVariables.set(\"emillyCandidateId\", jsonData.id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Emilly\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/candidates",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"candidates"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Jhonatan candidate",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"pm.collectionVariables.set(\"jhonatanCandidateId\", jsonData.id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Jhonatan\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/candidates",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"candidates"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Emilly slots",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"date\": \"2022-12-10\",\n  \"slot\": {\n    \"from\": \"10:00\",\n    \"to\": \"12:00\"\n  }\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/candidates/{{emillyCandidateId}}/slots",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"candidates",
+								"{{emillyCandidateId}}",
+								"slots"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Jhonatan slots",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"date\": \"2022-12-10\",\n  \"slot\": {\n    \"from\": \"15:00\",\n    \"to\": \"18:00\"\n  }\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/candidates/{{jhonatanCandidateId}}/slots",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"candidates",
+								"{{jhonatanCandidateId}}",
+								"slots"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FInd Interviewers available to the Jhonatan Candidate",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/candidates/{{jhonatanCandidateId}}/availabilities/interviewers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"candidates",
+								"{{jhonatanCandidateId}}",
+								"availabilities",
+								"interviewers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FInd Interviewers available to the Emilly Candidate Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/candidates/{{emillyCandidateId}}/availabilities/interviewers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"candidates",
+								"{{emillyCandidateId}}",
+								"availabilities",
+								"interviewers"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "jamesInterviewerId",
+			"value": ""
+		},
+		{
+			"key": "anneInterviewerId",
+			"value": ""
+		},
+		{
+			"key": "emillyCandidateId",
+			"value": ""
+		},
+		{
+			"key": "jhonatanCandidateId",
+			"value": ""
+		}
+	]
+}

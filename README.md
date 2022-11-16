@@ -46,3 +46,6 @@ When the API */candidates/{candidateId}/availabilities/interviewers* is called w
     - Interviewer Available: Jame with slots [10:00 - 11:00] [11:00 - 12:00] on 2022-12-10
   - Jhonatan
     - Interviewer Available: Anne with slots [15:00 - 16:00] [16:00 - 17:00] [17:00 - 18:00] on 2022-12-10
+    
+    
+**>> You can check more endpoints accessing http://localhost:8080/swagger-ui.html <<**
